@@ -1,4 +1,4 @@
-Items.allow({
+Articles.allow({
     'insert': function (userId, doc) {
         return userId;
     },

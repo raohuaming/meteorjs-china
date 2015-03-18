@@ -7,3 +7,5 @@ AppController.events({
         AccountsTemplates.logout();
     }
 });
+
+T9n.setLanguage("zh-cn");

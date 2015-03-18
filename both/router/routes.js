@@ -1,11 +1,15 @@
 Router.route('/', {
-    name: 'home'
+    name: 'articleList'
 });
 
-Router.route('/dashboard', {
-    name: 'dashboard'
+Router.route('/newArticle', {
+    name: 'newArticle'
 });
+
+Router.route('/articles/:_id', {
+    name: 'showArticle'
+})
 
 Router.plugin('ensureSignedIn', {
-    only: ['dashboard']
+    only: ['newArticle']
 });

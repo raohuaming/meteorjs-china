@@ -1,0 +1,25 @@
+<template name="newArticle">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="col-md-6">
+                    <input id="title" class="form-control input-lg" type="text" placeholder="文章标题"/>
+                </div>
+                <div class="col-md-6">
+                    <button id="preview" type="submit" class="btn btn-default">预览</button>
+                    <button id="edit" type="submit" class="btn btn-default">撰写</button>
+                    <button id="submit" type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </div>
+            <hr>
+            <div id="edit-area" class="row">
+                <div class="col-md-12">
+                    {{> CodeMirror options=editorOptions reactiveVar="articleBody"}}
+                </div>
+            </div>
+            <div id="preview-area" class="row">
+                <div class="col-md-12">{{#markdown}}{{ markdownData }}{{/markdown}}</div>
+            </div>
+        </div>
+    </div>
+</template>
