@@ -12,7 +12,7 @@ A starting point for MeteorJS applications. Includes iron-router, Bootstrap 3, F
 * [Favicons and Touch Icons](#favicons-and-touch-icons)
 * [Seed Data](#seed-data)
 
-## <a name="included-packages"></a> Included Packages
+## Included Packages
 
 * Collections:
   * [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers)
@@ -37,7 +37,7 @@ A starting point for MeteorJS applications. Includes iron-router, Bootstrap 3, F
   * [Underscore.string](http://epeli.github.io/underscore.string/)
   * [cunneen:mailgun](https://github.com/cunneen/meteor-mailgun)
 
-## <a name="installation"></a> Installation
+## Installation
 
 1. Clone this repo to `<yourapp>`
 
@@ -49,11 +49,11 @@ A starting point for MeteorJS applications. Includes iron-router, Bootstrap 3, F
 
 3. Start coding!
 
-## <a name="file-structure"></a> File Structure
+## File Structure
 
 We have a common file structure we use across all of our Meteor apps. Client-only files are stored in the `client` directory, server-only files are stored in the `server` directory, and shared files are stored in the `both` directory. The `private` and `public` directories are for either private or public assets. 
 
-## <a name="bootstrap-and-less"></a> Bootstrap and LESS
+## Bootstrap and LESS
 
 The majority of Bootstrap can be customized with LESS variables. If you look in `client/stylesheets/base/lib/bootstrap/variables.import.less` you will see a slew of configuration variables that can be tweaked to drastically change the look and feel of your site without having to write a single line of CSS.
 
@@ -82,7 +82,7 @@ After your file is ready, you need to import it into `client/stylesheets/base/gl
 
 The reason that this is done is to avoid any issues when the LESS files are compiled into CSS. That way, if one component relies on another or you want a certain order for your components, you can avoid any issues.
 
-## <a name="seo"></a> SEO
+## SEO
 
 Page titles, meta descriptions and Facebook and Twitter meta tags are handled by the [yasinuslu:blaze-meta](https://github.com/yasinuslu/blaze-meta) package. Global settings are configured in `both/router/meta.js`, while individual page settings are set at the controller level.
 
@@ -107,7 +107,7 @@ PostsShowController = AppController.extend({
 });
 ```
 
-## <a name="favicons-and-touch-icons"></a> Favicons and Touch Icons
+## Favicons and Touch Icons
 
 Upload your image to http://realfavicongenerator.net/ and place the resulting images in `public/images/favicons`
 
