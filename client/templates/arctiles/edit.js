@@ -1,18 +1,20 @@
 Template.editArticle.created = function () {
     //add your statement here
+    this.articleEmpty = new ReactiveVar(true);
 };
 
 Template.editArticle.rendered = function () {
+    var template = this;
+
     $('#preview-area').hide();
     $('#edit').hide();
+
     Session.set('articleBody', this.data.article.body);
-    //$('#articleTitle').editable({
-    //    mode: 'inline',
-    //    showbuttons: false,
-    //    success: function (response, newValue) {
-    //        //alert(newValue);
-    //    }
-    //});
+
+    template.articleEmpty.set(_.isEmpty($('#articleTitle').val()));
+    $('#articleTitle').change(function () {
+        template.articleEmpty.set(_.isEmpty($('#articleTitle').val()));
+    });
 };
 
 Template.editArticle.helpers({
@@ -27,6 +29,13 @@ Template.editArticle.helpers({
     },
     markdownData: function () {
         return Session.get('articleBody');
+    },
+    readyToSubmit: function () {
+        if (Template.instance().articleEmpty.get()) {
+            return 'disabled';
+        } else {
+            return '';
+        }
     }
 });
 
