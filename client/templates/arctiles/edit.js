@@ -6,13 +6,13 @@ Template.editArticle.rendered = function () {
     $('#preview-area').hide();
     $('#edit').hide();
     Session.set('articleBody', this.data.article.body);
-    $('#articleTitle').editable({
-        mode: 'inline',
-        showbuttons: false,
-        success: function (response, newValue) {
-            //alert(newValue);
-        }
-    });
+    //$('#articleTitle').editable({
+    //    mode: 'inline',
+    //    showbuttons: false,
+    //    success: function (response, newValue) {
+    //        //alert(newValue);
+    //    }
+    //});
 };
 
 Template.editArticle.helpers({
@@ -52,7 +52,7 @@ Template.editArticle.events({
         if (template.data.article._id) {
             Articles.update(template.data.article._id, {
                 $set: {
-                    title: $('#articleTitle').html(),
+                    title: $('#articleTitle').val(),
                     body: Session.get('articleBody')
                 }
             }, function (err, count) {
@@ -66,7 +66,7 @@ Template.editArticle.events({
             });
         } else {
             Articles.insert({
-                title: $('#articleTitle').html(),
+                title: $('#articleTitle').val(),
                 body: Session.get('articleBody')
             }, function (err, _id) {
                 if (err) {

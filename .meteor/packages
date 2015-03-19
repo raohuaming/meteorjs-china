@@ -28,4 +28,3 @@ service-configuration
 tmeasday:publish-counts
 perak:codemirror
 markdown
-natestrauser:x-editable-bootstrap
