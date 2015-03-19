@@ -31,7 +31,7 @@ ArticleListController = AppController.extend({
         }
 
         return {
-            articles: Articles.find({}),
+            articles: Articles.find({}, {sort: {updatedAt: -1, createdAt: -1}}),
             prevPageDisabled: prevPageDisabled,
             nextPageDisabled: nextPageDisabled,
             prevPageLink: prevPageLink,
