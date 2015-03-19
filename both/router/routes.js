@@ -3,13 +3,18 @@ Router.route('/', {
 });
 
 Router.route('/newArticle', {
-    name: 'newArticle'
+    name: 'newArticle',
+    template: 'editArticle'
 });
 
-Router.route('/articles/:_id', {
+Router.route('/article/:_id', {
     name: 'showArticle'
-})
+});
+
+Router.route('/article/:_id/edit', {
+    name: 'editArticle'
+});
 
 Router.plugin('ensureSignedIn', {
-    only: ['newArticle']
+    except: ['articleList']
 });

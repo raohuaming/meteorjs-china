@@ -5,12 +5,50 @@
                 <div class="page-header">
                     <h1> {{ title }} </h1>
                     <span>{{ dateformat createdAt }}</span>
-                    <!--<span>by {{ authorName }}</span>-->
+                    {{#if checkOwner createdBy currentUser}}
+                        <span class="dropdown pull-right">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown" aria-expanded="true">
+                            操作
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ pathFor 'editArticle' }}">修改</a>
+                            </li>
+                            <li id="delete-menu" role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                                        data-toggle="modal"
+                                                                        data-target="#confimDeleteDialog">删除</a></li>
+                        </ul>
+                    </span>
+                    {{/if}}
                 </div>
-                <p>
+                <p style="word-wrap: break-word">
                     {{#markdown}}{{ body }}{{/markdown}}
                 </p>
             {{/with}}
         </div>
     </div>
+
+    <div id="confimDeleteDialog" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">确认</h4>
+                </div>
+                <div class="modal-body">
+                    <p>确认删除这篇文章吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button id="delete-button" type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
 </template>

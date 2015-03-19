@@ -3,9 +3,15 @@ Articles.allow({
         return userId;
     },
     'update': function (userId, doc, fields, modifier) {
-        return userId;
+        return (userId && doc.createdBy === userId);
     },
     'remove': function (userId, doc) {
-        return userId;
+        return (userId && doc.createdBy === userId);
+    }
+});
+
+Articles.deny({
+    'update': function (userId, doc, fields, modifier) {
+        return _.contains(fields, 'createdBy') || _.contains(fields, 'createdAt')
     }
 });

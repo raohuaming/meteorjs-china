@@ -12,3 +12,13 @@ ShowArticleController = AppController.extend({
         Meta.setTitle(this.article.title);
     }
 });
+
+EditArticleController = ShowArticleController.extend({
+    onBeforeAction: function () {
+        if (this.article.createdBy !== Meteor.userId()) {
+            Router.go('showArticle', this.article);
+        } else {
+            this.next();
+        }
+    }
+});
