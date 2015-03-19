@@ -16,5 +16,5 @@ Router.route('/article/:_id/edit', {
 });
 
 Router.plugin('ensureSignedIn', {
-    except: ['articleList']
+    only: ['newArticle', 'editArticle']
 });
