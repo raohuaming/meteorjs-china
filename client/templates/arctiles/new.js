@@ -48,7 +48,7 @@ Template.newArticle.events({
                 $('#submit').prop("disabled", false);
                 alert(err.message);
             } else {
-                Router.go('articleList');
+                Router.go('showArticle', {_id: _id});
             }
         });
     }
