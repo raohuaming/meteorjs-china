@@ -22,8 +22,7 @@ Template.editArticle.helpers({
             lineNumbers: false,
             mode: "markdown",
             lineWrapping: true,
-            autofocus: true,
-            viewportMargin: 40
+            autofocus: true
         };
     },
     markdownData: function () {

@@ -2,3 +2,9 @@ input.xeditable-h1 {
     font-size: 36px;
     padding: 25px;
 }
+
+.CodeMirror {
+    height: auto;
+    min-height: 500px;
+    border: solid 1px black;
+}
