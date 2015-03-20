@@ -29,3 +29,5 @@ tmeasday:publish-counts
 perak:codemirror
 markdown
 reactive-var
+arkham:comments-ui
+aldeed:template-extension

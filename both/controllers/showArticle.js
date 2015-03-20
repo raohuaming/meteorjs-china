@@ -9,7 +9,9 @@ ShowArticleController = AppController.extend({
         };
     },
     onAfterAction: function () {
-        Meta.setTitle(this.article.title);
+        if (this.ready()) {
+            Meta.setTitle(this.article.title);
+        }
     }
 });
 

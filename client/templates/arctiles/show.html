@@ -25,7 +25,12 @@
                 <p style="word-wrap: break-word">
                     {{#markdown}}{{ body }}{{/markdown}}
                 </p>
+                <hr>
+                <div class="comment-section">
+                    {{> commentsBox id=_id customTemplate='newCommentsBox'}}
+                </div>
             {{/with}}
+
         </div>
     </div>
 

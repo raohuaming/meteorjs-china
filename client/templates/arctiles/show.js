@@ -1,10 +1,9 @@
 Template.showArticle.created = function () {
-    //add your statement here 
+    //add your statement here
 };
 
 Template.showArticle.rendered = function () {
-
-}
+};
 
 Template.showArticle.helpers({
     //add you helpers here
