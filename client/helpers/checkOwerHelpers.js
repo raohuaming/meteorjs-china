@@ -1,3 +1,3 @@
 Template.registerHelper('checkOwner', function (createdById, currentUser) {
-    return currentUser._id === createdById;
+    return currentUser && currentUser._id === createdById;
 });
