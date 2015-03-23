@@ -4,7 +4,10 @@
             {{# with article}}
                 <div class="page-header">
                     <h1> {{ title }} </h1>
-                    <span>{{ dateformat createdAt }}</span>
+                    <span>
+                      {{ dateformat createdAt }}
+                    </span>
+                    {{> jiathisShareButton uid=1359589715582580}}
                     {{#if checkOwner createdBy currentUser}}
                         <span class="dropdown pull-right">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
@@ -25,10 +28,6 @@
                 <p style="word-wrap: break-word">
                     {{#markdown}}{{ body }}{{/markdown}}
                 </p>
-                <hr>
-		<div class="share-section">
-		  {{> jiathisShareButton uid=1359589715582580}}
-		</div>
                 <hr>
                 <div class="comment-section">
                     {{> commentsBox id=_id customTemplate='newCommentsBox'}}
