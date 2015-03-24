@@ -1,5 +1,9 @@
 Template.showArticle.created = function () {
-    //add your statement here
+  //add your statement here
+  if (!Session.get(this.data.article._id)) {
+    Meteor.call('updateClick', this.data.article._id);
+  }
+  Session.set(this.data.article._id, true);
 };
 
 Template.showArticle.rendered = function () {
