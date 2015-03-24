@@ -12,7 +12,10 @@ Meteor.startup(function () {
         },
         authorName: function () {
             return Fake.word();
-        }
+        },
+    	clickCount: function (){
+	  return 1;
+	}
     });
 
     if (Articles.find({}).count() === 0) {

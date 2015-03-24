@@ -7,7 +7,10 @@
                     <span>
                       {{ dateformat createdAt }}
                     </span>
-                    {{> jiathisShareButton uid=1359589715582580}}
+		    {{> jiathisShareButton uid=1359589715582580}}
+		    <div align=right>
+		      共有{{ clickCount }}人看过
+		    </div>
                     {{#if checkOwner createdBy currentUser}}
                         <span class="dropdown pull-right">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
